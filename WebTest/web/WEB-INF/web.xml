@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5"
+		 xmlns="http://java.sun.com/xml/ns/javaee"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+   		 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>WebMyeclipse</display-name>
+	<welcome-file-list>
+		<welcome-file>hello.html</welcome-file>
+	</welcome-file-list>
+	 <!--WEB参数-->
+	<!--<context-param>
+		<param-name>driver</param-name>
+		<param-value>com.mysql.jdbc.Driver</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>jdbcUrl</param-name>
+		<param-value>jdbc:mysql://localhost:3306/jdbcdemo</param-value>
+	</context-param>-->
+
+<servlet>
+	<servlet-name>123</servlet-name>
+	<servlet-class>com.hlg.test.ServletTest1</servlet-class>
+</servlet>
+	<servlet-mapping>
+		<servlet-name>123</servlet-name>
+		<url-pattern>*.h</url-pattern>
+	</servlet-mapping>
+
+	<!--	 配置和映射 Servlet  -->
+ <!--<servlet>
+     <servlet-name>123</servlet-name>
+     <servlet-class>com.hlg.test.ServletTest</servlet-class>
+
+     &lt;!&ndash; Servlet初始化参数 &ndash;&gt;
+     <init-param>
+         <param-name>user</param-name>
+         <param-value>root</param-value>
+     </init-param>
+
+     <init-param>
+         <param-name>password</param-name>
+         <param-value>1230</param-value>
+     </init-param>
+
+     &lt;!&ndash;<load-on-startup>0</load-on-startup>&ndash;&gt;
+ </servlet>
+
+	<servlet-mapping>
+		<servlet-name>123</servlet-name>
+		<url-pattern>*.html</url-pattern>
+	</servlet-mapping>
+-->
+	</web-app>

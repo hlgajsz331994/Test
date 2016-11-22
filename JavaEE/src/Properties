@@ -1,0 +1,4 @@
+Driver=com.mysql.jdbc.Driver
+jdbcUrl=jdbc:mysql://localhost:3306/jdbcdemo
+user=root
+password=root

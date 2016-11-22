@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../jquery-3.0.0.js"></script>
+
+</head>
+<script>
+    $(function () {
+        var reg =/^\s*|\s*$/g;
+        $("li").click(function () {
+            alert($(this).text());
+        });
+        $("#test1").click(function () {
+            var gameText = $("#text1").val();
+            if(gameText.replace(reg,"") !=""){
+
+                if($("#类型 option:selected").text() != $("#类型 option:first").text()){
+                    $("<li ></li>").text(gameText).click(function () {
+                        alert($(this).text());
+                    }).appendTo($("#游戏"));
+
+                    return false ;
+                }else{
+                    alert("请选择类型");
+                }
+            }else{
+                alert("请输入文本内容");
+            }
+        })
+    })
+</script>
+<body>
+<form action="">
+    <ul id="游戏">
+        <li>魔兽</li>
+        <li>极品飞车</li>
+        <li>实况</li>
+        <li>红警</li>
+    </ul>
+    <ul id="城市">
+        <li>北京</li>
+        <li>上海</li>
+        <li>广州</li>
+        <li>深圳</li>
+    </ul>
+
+    <select id="类型">
+        <option value="默认" selected >请选择类型</option>
+        <option>类型一</option>
+        <option>类型二</option>
+        <option>类型三</option>
+        <option>类型四</option>
+    </select>
+    <br/><br/>
+    name:<input type="text" id="text1" value="">
+    <input type="submit" id="test1" value="Submit">
+</form>
+
+</body>
+</html>

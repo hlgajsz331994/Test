@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../jquery-3.0.0.js"></script>
+</head>
+<!--按钮全选/全不选   反选-->
+<script>
+    window.onload = function () {
+        var flagCheck1 = document.getElementById("checkfox1");
+        var flagCheck2 = document.getElementById("checkfox2");
+//        var flag = flagCheck1.checked;
+        var exeCheck = document.getElementById("运动").getElementsByTagName("input");
+        flagCheck1.onclick = function () {
+            var flag = this.checked;
+            for (var i = 0; i < exeCheck.length; i++) {
+                exeCheck[i].checked = flag;
+            }
+        }
+        flagCheck2.onclick = function () {
+            for(var i = 0; i<exeCheck.length;i++){
+                exeCheck[i].checked = !exeCheck[i].checked;
+            }
+        }
+        for(var i = 0;i<exeCheck.length;i++){
+            exeCheck[i].onclick = function () {
+                var k = 0 ;
+                for(var j = 0;j<exeCheck.length;j++){
+                    if(exeCheck[j].checked == true){
+                        k++;
+                    }
+                }
+                if(k == exeCheck.length){
+                    flagCheck1.checked = true ;
+                }else{
+                    flagCheck1.checked = false;
+                }
+            }
+        }
+    }
+</script>
+<body>
+<table id="运动">
+    <tr>
+        <td><input type="checkbox" >足球</td>
+        <td><input type="checkbox" >篮球</td>
+        <td><input type="checkbox" >羽毛球</td>
+        <td><input type="checkbox" >乒乓球</td>
+    </tr>
+</table>
+    <hr>
+        <input type="checkbox" id="checkfox1">全选/全不选
+        <input type="checkbox" id="checkfox2">反选
+</body>
+</html>

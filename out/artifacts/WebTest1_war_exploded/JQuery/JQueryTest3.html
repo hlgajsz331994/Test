@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script type="text/javascript" src="../jquery-3.0.0.js"></script>
+</head>
+<script>
+    $(function () {
+        $("a").click(function () {
+            var boo = confirm("确认要删除"+ $.trim($(this).closest("tr").find("td:first").text())+"的信息吗？");
+            if (boo) {
+            $(this).closest("tr").remove();
+            return false;
+        }
+        });
+        $(":submit[value = '添加']").click(function () {
+            var tbAdd = $("tbody[id='成绩表']");
+            $("<tr></tr>").appendTo(tbAdd);
+            $("<td>"+ $(":text[id='stuName']").val()+"</td>").appendTo($(tbAdd).find("tr:last"));
+            $("<td>"+ $(":text[id='stuNo']").val()+"</td>").appendTo($(tbAdd).find("tr:last"));
+            $("<td>"+ $(":text[id='stuScore']").val()+"</td>").appendTo($(tbAdd).find("tr:last"));
+            $("<td></td>").append($("<a href='' >删除</a>").click(function () {
+             $(this).closest("tr").remove();
+             })) .appendTo($(tbAdd).find("tr:last"));
+
+
+        })
+    })
+</script>
+
+<body>
+姓名：<input type="text" id="stuName" >
+学号：<input type="text" id="stuNo">
+分数：<input type="text" id="stuScore">
+<input type="submit" value="添加">
+<hr/>
+<table border="1">
+    <tbody id="成绩表" >
+    <tr>
+        <td>姓名</td>
+        <td>学号</td>
+        <td>分数</td>
+    </tr>
+    <tr>
+        <td>&nbsp;&nbsp;一棵树</td>
+        <td>001</td>
+        <td>60</td>
+        <td><a href="" >删除</a> </td>
+    </tr>
+    <tr>
+        <td>&nbsp;&nbsp;两棵树</td>
+        <td>001</td>
+        <td>60</td>
+        <td><a href="">删除</a> </td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>

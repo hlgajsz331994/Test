@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<!--
+* 为 #employeetable 的所有的 a 节点添加 Onclick 响应函数:
+* 1. 弹出确认对话框: 确定要删除 xx 的信息吗? xx 为当前 a 节点所在的 td 所在的 tr 的
+* 第一个 td 子节点的文本值, 且要去除前后空格.
+* 2. 若点击 "确认" , 则删除 a 节点的所在的 行
+*
+* 注意:
+* 1. a 节点是一个超级链接, 可以在其 onclick 事件中通过返回 false, 来取消默认行为
+* 2. tr 的直接父节点为 tbody, 而不是 table
+* 3. 可以把去除前后空格的代码写成一个 trim(str) 函数.
+*
+* 为 #addEmpButton 添加 onclick 响应函数:
+* 1. 获取 #name, #email, #salary 的文本框的值
+* 2. 利用 1 获取的文本值创建 3 个 td 节点, 在创建一个 tr 节点. 并把以上的 3 个 td
+*    节点价位 tr 节点的子节点
+<tr>
+    <td>Tom</td>
+    <td>tom@tom.com</td>
+    <td>5000</td>
+</tr>
+* 3. 在创建一个 td 节点: <td><a href="deleteEmp?id=xxx">Delete</a></td>
+* 4. 把 3 创建的 td 也加为 tr 的子节点.
+* 5. 再把 tr 加为 #employeetable 的 tbody 子节点的子节点.
+* 6. 为新创建的 tr 的 a 子节点添加 Onclick 响应函数, 使其也具备删除的功能.
+-->
+    <script>
+        var rmSpace = function (Child) {
+                var rm = /^\s*|\s*$/g ;
+                Child = Child.replace(rm,"") ;
+                return Child ;
+        }
+        window.onload = function () {
+            var tbody2 = document.getElementById("成绩表");
+            var as = tbody2.getElementsByTagName("a");
+
+            for(var i = 0;i<as.length;i++){
+                        as[i].onclick = function () {
+                            rmTr(this);
+                            return false ;
+                }
+            }
+            var rmTr = function (aNode) {
+                var tr = aNode.parentNode.parentNode;
+                var tds = tr.getElementsByTagName("td");
+                var fisTdText = tds[0].firstChild.nodeValue;
+                fisTdText = rmSpace(fisTdText);
+                var con = confirm("是否删除 "+fisTdText+" 的记录");
+                if(con){
+                    tr.parentNode.removeChild(tr);
+                }
+            }
+            var sub = document.getElementsByTagName("input");
+            sub[3].onclick = function () {
+                var Name = sub[0].value;
+                var No = sub[1].value;
+                var Score = sub[2].value;
+                var addTr = document.createElement("tr");
+                var addTd1 = document.createElement("td");
+                var addTd2 = document.createElement("td");
+                var addTd3 = document.createElement("td");
+                var addTd4 = document.createElement("td");
+                var aTd = document.createElement("a");
+
+                addTd1.appendChild(document.createTextNode(Name));
+                addTd2.appendChild(document.createTextNode(No));
+                addTd3.appendChild(document.createTextNode(Score));
+                aTd.appendChild(document.createTextNode("删除"));
+                aTd.setAttribute("href","#");
+                addTd4.appendChild(aTd);
+
+                addTr.appendChild(addTd1);
+                addTr.appendChild(addTd2);
+                addTr.appendChild(addTd3);
+                addTr.appendChild(addTd4);
+
+                tbody2.appendChild(addTr);
+
+                aTd.onclick = function () {
+                    rmTr(this);
+                    return false ;
+                }
+            }
+        }
+    </script>
+<body>
+                姓名：<input type="text" id="stuName" >
+                学号：<input type="text" id="stuNo">
+                分数：<input type="text" id="stuScore">
+                  <input type="submit" value="添加">
+
+
+    <hr/>
+    <table border="1">
+        <tbody id="成绩表" >
+            <tr>
+                <td>姓名</td>
+                <td>学号</td>
+                <td>分数</td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;一棵树</td>
+                <td>001</td>
+                <td>60</td>
+                <td><a href="" >删除</a> </td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;两棵树</td>
+                <td>001</td>
+                <td>60</td>
+                <td><a href="">删除</a> </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
