@@ -30,9 +30,9 @@ public class JDBCTool {
 		}
 		pre.execute();
 		JDBCTool.closeDB(con, null, pre);
-		
-		
-		
+
+
+
 	}
 	
 	//实现数据库的连接
@@ -64,13 +64,13 @@ public class JDBCTool {
 	}
 	//关闭连接
 	public static void closeDB(Connection con ,Statement sta,PreparedStatement pre) throws Exception{
-		if(con!=null){
-			con.close();
-		}
-		if(sta!=null){
-			sta.close();
-		}
-		if(pre!=null){
+			if(con!=null){
+				con.close();
+			}
+			if(sta!=null){
+				sta.close();
+			}
+			if(pre!=null){
 			pre.close();
 		}
 	}
