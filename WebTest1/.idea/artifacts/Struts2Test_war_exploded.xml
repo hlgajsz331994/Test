@@ -1,0 +1,23 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Struts2Test:war exploded">
+    <output-path>$PROJECT_DIR$/web/WEB-INF/classes/artifacts/Struts2Test_war_exploded</output-path>
+    <root id="root">
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/asm.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/ognl.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/asm-tree.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/javassist.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/commons-io.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/freemarker.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/xwork-core.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/asm-commons.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/commons-lang.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/struts2-core.jar" />
+          <element id="file-copy" path="$PROJECT_DIR$/../Struts2Test/lib/commons-fileupload.jar" />
+        </element>
+      </element>
+      <element id="javaee-facet-resources" facet="Struts2Test/web/Web" />
+    </root>
+  </artifact>
+</component>

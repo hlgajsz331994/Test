@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+        <!DOCTYPE struts PUBLIC
+                "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+                "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+<package name="Hello" extends="struts-default">
+        <action name="show" >
+                <result>WEB-INF/pages/hello.jsp</result>
+        </action>
+        <!--<action name="test1" class="com.hlg.Struts2Test.LoginAction">-->
+        <!--<result name="success">WEB-INF/pages/showResult.jsp</result>-->
+        <!--</action>-->
+        <action name="test">
+                <result>WEB-INF/pages/test1.jsp</result>
+        </action>
+        <action name="test1">
+                <result>WEB-INF/pages/showResult.jsp</result>
+        </action>
+</package>
+</struts>
