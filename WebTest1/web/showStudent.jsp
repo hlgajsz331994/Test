@@ -5,5 +5,6 @@
 </head>
 <body>
 <%=request.getAttribute("students")%>
+------${requestScope.students}
 </body>
 </html>
