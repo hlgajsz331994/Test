@@ -16,6 +16,8 @@
     Num:<input type="text" name="Num">
     tel:<input type="text" name="tel">
     <input type="submit" value="提交">
+
+
 </form>
 
 </body>

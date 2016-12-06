@@ -24,9 +24,15 @@
         </action>
         <action name="123" >
                 <result name="success" type="redirectAction">
-                        <param name="actionName"></param>
-                        <param name="namespace"></param>
+                        <param name="actionName"> </param>
+                        <param name="namespace"> </param>
                 </result>
+        </action>
+        <action name="error" class="com.hlg.Struts2Test.ErrorTest"
+                method="test">
+                <exception-mapping exception="java.lang.ArithmeticException" result="error"> </exception-mapping>
+                <result name="error">index.jsp</result>
+                <result name="success">hello.jsp</result>
         </action>
 </package>
 </struts>

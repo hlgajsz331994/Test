@@ -5,6 +5,7 @@
                 "http://struts.apache.org/dtds/struts-2.0.dtd">
 
 <struts>
+        <constant name="struts.action.extension" value="action,html,do"></constant>
 <package name="Hello" extends="struts-default">
         <action name="show" >
                 <result>WEB-INF/pages/hello.jsp</result>
@@ -17,6 +18,21 @@
         </action>
         <action name="test1">
                 <result>WEB-INF/pages/showResult.jsp</result>
+        </action>
+        <action name="LoginTest1">
+                <result>WEB-INF/pages/LoginTest1.jsp</result>
+        </action>
+        <action name="123" >
+                <result name="success" type="redirectAction">
+                        <param name="actionName"> </param>
+                        <param name="namespace"> </param>
+                </result>
+        </action>
+        <action name="error" class="com.hlg.Struts2Test.ErrorTest"
+                method="test">
+                <exception-mapping exception="java.lang.ArithmeticException" result="error"> </exception-mapping>
+                <result name="error">index.jsp</result>
+                <result name="success">hello.jsp</result>
         </action>
 </package>
 </struts>
