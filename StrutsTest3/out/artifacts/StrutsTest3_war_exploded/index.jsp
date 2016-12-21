@@ -12,8 +12,10 @@
     <title></title>
       </head>
       <body>
+      文本框：<input type="text" value="12345">
+      <br>
       <a href="show.action?name=123">123</a>
-
+  <br>
   <a href="test.action">test1</a>
 
   <a href="LoginTest1.action">登录练习</a>
@@ -23,6 +25,8 @@
 
   Message:${exception.message}
   <br>
-  值栈：<s:property value="[0]"></s:property>
+  值栈：<s:property value="[0]"/>
+      <br>
+      Request:<%=request%>
   </body>
 </html>

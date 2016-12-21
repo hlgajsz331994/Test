@@ -11,19 +11,21 @@
 <head>
     <title></title>
 </head>
-        <body>
+<body>
         <%="新的风暴"%>
         <br>
-        Name:<s:property value="name"></s:property>
-        <s:debug></s:debug>
+        Name(Struts途径获取):<s:property value ="name"/>
+        <br>
+        Name(请求域中获取):${requestScope.name}
+        <s:debug/>
         <hr>
         <s:url var="urlTest1" value="LoginTest1.jsp">
-            <s:param name="id" value="24"></s:param>
+            <s:param name="id" value="24"/>
         </s:url>
         ${urlTest1}
         <br>
         <s:url var="urlTest2" value="LoginTest1.jsp">
-            <s:param name="id1" value="id"></s:param>
+            <s:param name="id1" value="id"/>
         </s:url>
         ${urlTest2}
 </body>

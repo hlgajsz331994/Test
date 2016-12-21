@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: Administrator
@@ -11,10 +12,11 @@
     <title></title>
 </head>
 <body>
-Name:${Name}
+Name:${requestScope.Name}
 Num:${Num}
 tel:${tel}
 ----------
 <%=request%>
+<s:debug/>
 </body>
 </html>

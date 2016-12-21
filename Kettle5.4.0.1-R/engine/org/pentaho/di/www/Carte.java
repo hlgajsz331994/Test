@@ -147,7 +147,36 @@ public class Carte {
     }
   }
 
+
+    //Carte 服务的入口
+
   public static void main( String[] args ) throws Exception {
+/**
+ 08
+ * Kettle运行环境初始化。调用KettleEnvironment类中初始化方法。
+ 09
+ * 1.在init 方法中会创建kettle客户端工具执行环境。包括创建在C盘用户目录下创建默认目录及kettle.properties文件。
+ 10
+ * 2.再通过 EnvUtil.environmentInit() 读取kettle.properties配置文件，并给Const 类常量参数赋值。
+ 11
+ *      --Const类是用来定义配置在kettle中的各种设置的默认值的参数。它还包含了一些静态的最终方法。
+ 12
+ * 3.进行Kettle的日志记录相关设置初始化 KettleLogStore.init()。
+ 13
+ * 4.增加控制台输出，并注册元数据插件并初始化PluginRegistry.init( true )。
+ 14
+ * 5.JndiUtil.initJNDI() 配置JNDI（JNDI具体是什么没有深究）。
+ 15
+ * 6.注册的本地类型和插件的各种插件类型…PluginRegistry.init()。
+ 16
+ * 7.KettleVariablesList.init() kettle 的变量初始化加载。主要是读取engine 目录下 kettle-variables.xml配置文件中的变量。
+ 17
+ * 8.initLifecycleListeners() 初始化生命周期的监听器(针对所有插件)
+ 18
+ * 都执行完成表示Kettle 环境初始化完毕
+ 19
+ */
+
     KettleEnvironment.init();
     KettleClientEnvironment.getInstance().setClient( KettleClientEnvironment.ClientType.CARTE );
 
@@ -181,7 +210,7 @@ public class Carte {
 
       System.err.println( BaseMessages.getString( PKG, "Carte.Usage.Example" ) + ": Carte 127.0.0.1 8080" );
       System.err.println( BaseMessages.getString( PKG, "Carte.Usage.Example" ) + ": Carte 192.168.1.221 8081" );
-      System.err.println();
+        System.err.println();
       System.err.println( BaseMessages.getString( PKG, "Carte.Usage.Example" )
         + ": Carte /foo/bar/carte-config.xml" );
       System.err.println( BaseMessages.getString( PKG, "Carte.Usage.Example" )

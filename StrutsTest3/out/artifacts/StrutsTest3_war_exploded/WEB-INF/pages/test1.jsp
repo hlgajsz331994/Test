@@ -11,7 +11,7 @@
     <title></title>
 </head>
 <body>
-<form name="submit" action="test1.action" method="get">
+<form name="submit" action="test1.action" method="post">
     Name:<input type="text" name="Name">
     Num:<input type="text" name="Num">
     tel:<input type="text" name="tel">
